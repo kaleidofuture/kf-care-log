@@ -452,4 +452,4 @@ if daily_records:
         )
 
 # --- Footer ---
-render_footer(libraries=["fpdf2", "Jinja2"])
+render_footer(libraries=["fpdf2", "Jinja2"], repo_name="kf-care-log")
