@@ -67,5 +67,6 @@
   "generate_daily_pdf": "本日の記録をまとめてPDF出力",
   "download_daily_pdf": "本日のまとめPDFをダウンロード",
   "daily_summary_title": "本日の介護記録まとめ",
-  "daily_summary_count": "全{count}件の記録"
+  "daily_summary_count": "全{count}件の記録",
+  "report_issue": "不具合を報告"
 }

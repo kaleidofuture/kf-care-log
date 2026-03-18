@@ -67,5 +67,6 @@
   "generate_daily_pdf": "Export Today's Records as PDF",
   "download_daily_pdf": "Download Daily Summary PDF",
   "daily_summary_title": "Daily Care Record Summary",
-  "daily_summary_count": "{count} records total"
+  "daily_summary_count": "{count} records total",
+  "report_issue": "Report an issue"
 }
