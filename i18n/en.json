@@ -52,5 +52,20 @@
   "assistance_options": ["Independent", "Supervision", "Partial Assistance", "Full Assistance"],
   "activity_type_options": ["Exercise", "Recreation", "Walk", "Bathing", "Rehabilitation", "Other"],
   "participation_options": ["Active", "Normal", "Passive", "Refused"],
-  "mood_options": ["Good", "Normal", "Slightly Anxious", "Agitated", "Other"]
+  "mood_options": ["Good", "Normal", "Slightly Anxious", "Agitated", "Other"],
+  "quick_preset_help": "Use the preset button to quickly fill standard vital values.",
+  "quick_preset_standard": "Fill Standard Vitals (36.5°C / 120/80 / 72bpm / SpO2 98%)",
+  "alert_high_temp": "Temperature is {value}°C. Possible fever.",
+  "alert_high_bp_sys": "Systolic BP is {value}mmHg. Possible hypertensive emergency.",
+  "alert_high_bp_dia": "Diastolic BP is {value}mmHg. Possible hypertensive emergency.",
+  "alert_low_spo2": "SpO2 is {value}%. Possible hypoxia.",
+  "alert_high_pulse": "Pulse is {value}bpm. Possible tachycardia.",
+  "alert_low_pulse": "Pulse is {value}bpm. Possible bradycardia.",
+  "daily_summary_section": "Today's Records Summary",
+  "daily_summary_info": "{count} records saved today.",
+  "daily_summary_preview": "View record list",
+  "generate_daily_pdf": "Export Today's Records as PDF",
+  "download_daily_pdf": "Download Daily Summary PDF",
+  "daily_summary_title": "Daily Care Record Summary",
+  "daily_summary_count": "{count} records total"
 }

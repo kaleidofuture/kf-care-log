@@ -52,5 +52,20 @@
   "assistance_options": ["自立", "見守り", "一部介助", "全介助"],
   "activity_type_options": ["体操・運動", "レクリエーション", "散歩", "入浴", "リハビリ", "その他"],
   "participation_options": ["積極的", "普通", "消極的", "拒否"],
-  "mood_options": ["良好", "普通", "やや不安", "不穏", "その他"]
+  "mood_options": ["良好", "普通", "やや不安", "不穏", "その他"],
+  "quick_preset_help": "プリセットボタンで標準的なバイタル値を一括入力できます。",
+  "quick_preset_standard": "標準バイタルを入力（36.5°C / 120/80 / 72bpm / SpO2 98%）",
+  "alert_high_temp": "体温が{value}°Cです。発熱の可能性があります。",
+  "alert_high_bp_sys": "収縮期血圧が{value}mmHgです。高血圧緊急症の可能性があります。",
+  "alert_high_bp_dia": "拡張期血圧が{value}mmHgです。高血圧緊急症の可能性があります。",
+  "alert_low_spo2": "SpO2が{value}%です。低酸素状態の可能性があります。",
+  "alert_high_pulse": "脈拍が{value}bpmです。頻脈の可能性があります。",
+  "alert_low_pulse": "脈拍が{value}bpmです。徐脈の可能性があります。",
+  "daily_summary_section": "本日の記録まとめ",
+  "daily_summary_info": "本日{count}件の記録が保存されています。",
+  "daily_summary_preview": "記録一覧を確認",
+  "generate_daily_pdf": "本日の記録をまとめてPDF出力",
+  "download_daily_pdf": "本日のまとめPDFをダウンロード",
+  "daily_summary_title": "本日の介護記録まとめ",
+  "daily_summary_count": "全{count}件の記録"
 }
