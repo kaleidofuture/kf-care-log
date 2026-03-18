@@ -1,3 +1,14 @@
+---
+title: kf-care-log
+emoji: 🚀
+colorFrom: green
+colorTo: blue
+sdk: streamlit
+sdk_version: 1.44.1
+app_file: app.py
+pinned: false
+---
+
 # KF-CareLog
 
 > 介護記録をテンプレートで効率化し、PDFで出力するアプリ。
