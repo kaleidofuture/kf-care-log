@@ -12,9 +12,13 @@ from components.header import render_header
 from components.footer import render_footer
 from components.i18n import t
 
+import json
 from datetime import datetime, date, time
 from io import BytesIO
 from fpdf import FPDF
+from streamlit_js_eval import streamlit_js_eval
+
+STORAGE_KEY = "kf-care-log-records"
 
 # --- Header ---
 render_header()
@@ -26,6 +30,44 @@ if "last_user_name" not in st.session_state:
     st.session_state["last_user_name"] = ""
 if "last_recorder_name" not in st.session_state:
     st.session_state["last_recorder_name"] = ""
+
+# --- Load from localStorage ---
+if "data_loaded" not in st.session_state:
+    stored = streamlit_js_eval(js_expressions=f'localStorage.getItem("{STORAGE_KEY}")')
+    if stored and stored != "null":
+        try:
+            st.session_state["daily_records"] = json.loads(stored)
+        except Exception:
+            pass
+    st.session_state["data_loaded"] = True
+
+
+def _serialize_records(records):
+    """Convert date/time objects to strings for JSON serialization."""
+    serialized = []
+    for rec in records:
+        new_rec = dict(rec)
+        if "data" in new_rec:
+            new_data = {}
+            for k, v in new_rec["data"].items():
+                if isinstance(v, date) and not isinstance(v, datetime):
+                    new_data[k] = v.strftime("%Y-%m-%d")
+                elif isinstance(v, time):
+                    new_data[k] = v.strftime("%H:%M")
+                elif isinstance(v, datetime):
+                    new_data[k] = v.strftime("%Y-%m-%d %H:%M")
+                else:
+                    new_data[k] = v
+            new_rec["data"] = new_data
+        serialized.append(new_rec)
+    return serialized
+
+
+def save_to_local_storage():
+    """Save daily_records to browser localStorage."""
+    serializable = _serialize_records(st.session_state["daily_records"])
+    data_json = json.dumps(serializable, ensure_ascii=False)
+    streamlit_js_eval(js_expressions=f'localStorage.setItem("{STORAGE_KEY}", {json.dumps(data_json)})')
 
 # --- Template definitions ---
 TEMPLATES = {
@@ -406,6 +448,7 @@ if form_data is not None:
         "data": form_data,
         "timestamp": datetime.now().strftime("%H:%M"),
     })
+    save_to_local_storage()
 
     # Preview data
     with st.expander(t("preview_data")):
